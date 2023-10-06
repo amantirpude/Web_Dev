@@ -42,32 +42,26 @@
 <body>
     <div id = "one">
         <fieldset style="border-radius: 20px; border: 2px solid orange;">
-        <form action="#" onsubmit="onsignup(event)">
+        <form id="add-form" onsubmit="onsignup(event)">
             <h2 style="text-align: center; color: orange;">Book a call</h2>
             <p style="text-align: center;">Book a call slot and our representative will call you within 1hr of selected time</p>
             <hr>
             <br>
-            <label for="name"> Name: </label><br>
-            <input type="text" name="name" required><br><br>
-            <label for="email"> Email: </label><br>
-            <input type="email" name="email" required><br><br>
-            <label for="phone"> Phone: </label><br>
-            <input type="number" name="phone" required><br><br>
-            <label for="time">Time for Call:</label><br><br>
-            <input type="date" name="date" required>
-            <input type="time" name="time" required>
+            <div id="list-input">
+                <label> Name: </label><br>
+                <input id = "name" type="text" name="name" required><br><br>
+                <label > Email: </label><br>
+                <input id = "email" type="email" name="email" required><br><br>
+                <label > Phone: </label><br>
+                <input id = "phone" type="number" name="phone" required><br><br>
+                <label >Time for Call:</label><br><br>
+                <input id = "date" type="date" name="date" required>
+                <input id = "time" type="time" name="time" required>
+            </div>
             <br><br><br>
             <button>GET A CALL</button>
-            <script>
-                function onsignup(event){
-                    event.preventDefault();
-                    console.log(event.target.name.value);
-                    console.log(event.target.email.value);
-                    console.log(event.target.phone.value);
-                    console.log(event.target.date.value);
-                    console.log(event.target.time.value);
-                }
-            </script>
+            <ul id="items" class="list-group"></ul>
+            <script src = "practice.js"></script>
         </form>
     </fieldset>
     </div>

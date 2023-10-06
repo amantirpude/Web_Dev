@@ -12,6 +12,6 @@ console.log(a1);
 // a1 = 45;
 
 a1.friend = "Lokesh";
-console.log(a1);
+console.log(a1.name);
 a1["name"] = "amu";
 console.log(a1);

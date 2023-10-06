@@ -1,3 +1,9 @@
+let itemList = document.getElementById("items");
+let form = document.getElementById("add-form");
+    
+form.addEventListener('button', onsignup);
+itemList.addEventListener("click",removeItem);
+let myObj_Ser;
 function onsignup(event){
     event.preventDefault();
     // console.log(event.target.name.value);
@@ -5,8 +11,6 @@ function onsignup(event){
     // console.log(event.target.phone.value);
     // console.log(event.target.date.value);
     // console.log(event.target.time.value);
-
-    
     let myObj = {
         name: event.target.name.value,
         email: event.target.email.value,
@@ -14,15 +18,12 @@ function onsignup(event){
         date: event.target.date.value,
         time: event.target.time.value
     }
-    let myObj_Ser = JSON.stringify(myObj);
+    myObj_Ser = JSON.stringify(myObj);
     localStorage.setItem(event.target.email.value, myObj_Ser);
+    
 
-    let itemList = document.getElementById("items");
-    let form = document.getElementById("add-form");
     //Add Item
     // console.log(newItem);
-
-    form.addEventListener("button",onsignup);
     // Create new li element
     let li = document.createElement('li');
     // Add class
@@ -32,4 +33,31 @@ function onsignup(event){
     li.appendChild(document.createTextNode(print));
     itemList.appendChild(li);
 
-}
+    // Create del button element
+    let deleteBtn = document.createElement('button');
+  
+    // Add classes to del button
+    deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+  
+    // Append text node
+    deleteBtn.appendChild(document.createTextNode('Delete'));
+    deleteBtn.onclick = () =>{
+      localStorage.removeItem(myObj.email);
+    }
+  
+    // Append button to li
+    li.appendChild(deleteBtn);
+  
+    // Append li to list
+    itemList.appendChild(li);
+  }
+  
+  // Remove item
+  function removeItem(e){
+    if(e.target.classList.contains('delete')){
+      if(confirm('Are You Sure?')){
+        let li = e.target.parentElement;
+        itemList.removeChild(li);
+      }
+    }
+  }

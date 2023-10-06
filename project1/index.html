@@ -24,10 +24,10 @@
           <label for="email">Email:</label>
           <input type="text" id="email" required>
         </div>
-        <input class="btn1" type="submit" value="Submit1">
+        <!-- <input class="btn1" type="submit" value="Submit1">
         <input class="btn2" type="submit" value="Submit2">
-        <input class="btn3" type="submit" value="Submit3">
-        <button style="background-color: Red; color: white; width: 300px;">Submit</button>
+        <input class="btn3" type="submit" value="Submit3"> -->
+        <button style="background-color: Red; color: white; width: 380px; height: 30px">Submit</button>
       </form>
 
       <ul id="users"></ul>
@@ -39,30 +39,30 @@
     
 
     <script>
-        const btn1 = document.querySelector('.btn1');
-btn1.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('click');
-});
+      //         const btn1 = document.querySelector('.btn1');
+      // btn1.addEventListener('click', (e) => {
+      //     e.preventDefault();
+      //     console.log('click');
+      // });
 
-const btn2 = document.querySelector('.btn2');
-btn2.addEventListener('mouseover', (e) => {
-    e.preventDefault();
-    console.log('mouseover');
-});
+      // const btn2 = document.querySelector('.btn2');
+      // btn2.addEventListener('mouseover', (e) => {
+      //     e.preventDefault();
+      //     console.log('mouseover');
+      // });
 
-const btn3 = document.querySelector('.btn3');
-btn3.addEventListener('mouseout', (e) => {
-    e.preventDefault();
-    console.log('mouseout');
-});
+      // const btn3 = document.querySelector('.btn3');
+      // btn3.addEventListener('mouseout', (e) => {
+      //     e.preventDefault();
+      //     console.log('mouseout');
+      // });
 
-function onsignup(event){
-    event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.email.value);
+      function onsignup(event){
+        event.preventDefault();
+        console.log(event.target.name.value);
+        console.log(event.target.email.value);
 
-}
+      }
     </script>
   </body>
 </html>

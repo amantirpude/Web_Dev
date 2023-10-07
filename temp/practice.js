@@ -44,17 +44,42 @@ function onsignup(event){
     deleteBtn.onclick = () =>{
       localStorage.removeItem(myObj.email);
     }
-  
+
+    //Create Edit Button
+    let editBtn = document.createElement('button');
+    editBtn.className = 'edit';
+    editBtn.appendChild(document.createTextNode('Edit'));
+    editBtn.onclick = () =>{
+      let itemName = document.getElementById("name");
+      itemName.value = myObj.name;
+      let itemEmail = document.getElementById("email");
+      itemEmail.value = myObj.email;
+      let itemPhone = document.getElementById("phone");
+      itemPhone.value = myObj.phone;
+      localStorage.removeItem(myObj.email);
+    }
+
+    li.appendChild(editBtn);
+    
     // Append button to li
     li.appendChild(deleteBtn);
   
     // Append li to list
     itemList.appendChild(li);
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
   }
   
   // Remove item
   function removeItem(e){
     if(e.target.classList.contains('delete')){
+      if(confirm('Are You Sure?')){
+        let li = e.target.parentElement;
+        itemList.removeChild(li);
+      }
+    }
+    if(e.target.classList.contains('edit')){
       if(confirm('Are You Sure?')){
         let li = e.target.parentElement;
         itemList.removeChild(li);

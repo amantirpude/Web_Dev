@@ -5,6 +5,12 @@ const addBtn = document.getElementById('add-product');
 const electronicsItems = document.getElementById('electronicsItems');
 const fashionItems = document.getElementById('fashionItems');
 const beautyItems = document.getElementById('beautyItems');
+const groceryItems = document.getElementById('groceryItems');
+const jewelleryItems = document.getElementById('jewelleryItems');
+const babyItems = document.getElementById('babyItems');
+const furnitureItems = document.getElementById('furnitureItems');
+const booksItems = document.getElementById('booksItems');
+const gymItems = document.getElementById('gymItems');
 
 
 addBtn.addEventListener('click', function() {
@@ -39,14 +45,34 @@ const createElement = (user) => {
     deleteBtn.className = 'delete';
     deleteBtn.appendChild(document.createTextNode('Delete Product'));
     li.append(deleteBtn);
-    if(user.category === 'Electronics'){
-        electronicsItems.append(li);
-    }
-    if(user.category === 'Fashion'){
-        fashionItems.append(li);
-    }
-    if(user.category === 'Beauty Products'){
-        beautyItems.append(li);
+    switch(user.category){
+        case "Electronics":
+            electronicsItems.appendChild(li);
+            break;
+        case "Fashion":
+            fashionItems.appendChild(li);
+            break;
+        case "Beauty Products":
+            beautyItems.appendChild(li);
+            break;
+        case "Groceries":
+            groceryItems.appendChild(li);
+            break;
+        case "Jewellery":
+            jewelleryItems.appendChild(li);
+            break;
+        case "Baby Product":
+            babyItems.appendChild(li);
+            break;
+        case "Furniture":
+            furnitureItems.appendChild(li);
+            break;
+        case "Books":
+            booksItems.appendChild(li);
+            break;
+        case "Gym Equipments":
+            gymItems.appendChild(li);
+            break;
     }
     deleteItem(deleteBtn, user, li);
 }
@@ -54,14 +80,34 @@ const createElement = (user) => {
 const deleteItem = (deleteBtn, user , li) => {
     deleteBtn.onclick = () => {
         if(confirm('Are You Sure?')){
-            if(user.category === 'Electronics'){
-                electronicsItems.removeChild(li);
-            }
-            else if(user.category === 'Fashion'){
-                fashionItems.removeChild(li);
-            }
-            else if(user.category === 'Beauty Product'){
-                beautyItems.removeChild(li);
+            switch(user.category){
+                case "Electronics":
+                    electronicsItems.removeChild(li);
+                    break;
+                case "Fashion":
+                    fashionItems.removeChild(li);
+                    break;
+                case "Beauty Products":
+                    beautyItems.removeChild(li);
+                    break;
+                case "Groceries":
+                    groceryItems.removeChild(li);
+                    break;
+                case "Jewellery":
+                    jewelleryItems.removeChild(li);
+                    break;
+                case "Baby Product":
+                    babyItems.removeChild(li);
+                    break;
+                case "Furniture":
+                    furnitureItems.removeChild(li);
+                    break;
+                case "Books":
+                    booksItems.removeChild(li);
+                    break;
+                case "Gym Equipments":
+                    gymItems.removeChild(li);
+                    break;
             }
         }
         deleteData(user._id);

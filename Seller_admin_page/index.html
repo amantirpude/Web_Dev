@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller's Admin Page</title>
+</head>
+<body>
+    <div class="Sellers-page">
+        <label>Seller's Price: </label>
+        <input type="number" name="price" id="price">
+        <label>Product: </label>
+        <input type="text" name="product" id="product">
+        <label>Category: </label>
+        <select id="category">
+            <option value="Electronics">Electronics</option>
+            <!-- <option value="Groceries">Groceries</option>
+            <option value="Jewellery">Jewellery</option> -->
+            <option value="Fashion">Fashion</option>
+            <!-- <option value="Baby Product">Baby Product</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Books">Books</option> -->
+            <option value="Beauty Products">Beauty Products</option>
+            <!-- <option value="Gym Equipments">Gym Equipments</option> -->
+        </select>
+        <button id="add-product">Add Product</button>
+    </div>
+    <div>
+        <h1>Products</h1>
+        <ul id="electronicsItems" class="list-group">
+            <h2>Electronics</h2>
+        </ul>
+        <ul id="fashionItems" class="list-group">
+            <h2>Fashion</h2>
+        </ul>
+        <ul id="beautyItems" class="list-group">
+            <h2>Beauty</h2>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
+    <script src="/Seller_admin_page/main.js"></script>
+</body>
+</html>
